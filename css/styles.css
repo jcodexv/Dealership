@@ -149,5 +149,11 @@ body{
     border-radius: 25px;
     color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.starter-content button:hover{
+    background-color: #fff;
+    color: #000;
+    transform: scale(1.05);
 }
