@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Dealership</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="/content/logo/logo.png">
 </head>
 <body>
@@ -14,11 +15,14 @@
             <div class="nav-items">
                 <ul>
                     <li class="nav-links"><a href="#">Home</a></li>
-                    <li class="nav-links"><a href="#">About Us</a></li>
-                    <li class="nav-links"><a href="#">Deluxe Cars</a></li>
-                    <li class="nav-links"><a href="#">Black Friday</a></li>
+                    <li class="nav-links"><a href="#about">About Us</a></li>
+                    <li class="nav-links"><a href="#cars">Deluxe Cars</a></li>
+                    <li class="nav-links"><a href="#countdown">Black Friday</a></li>
                     <li class="nav-links"><a href="#">Contact</a></li>
                 </ul>
+                <div class="navbar-toggler">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </div>
             </div>
         </div>
     </header>
@@ -31,7 +35,7 @@
                 <button>BUY NOW!</button>
             </div>
         </div>
-    <section class="about-section">
+    <section class="about-section" id="about">
         <div class="about-content">
             <div class="text-cont">
                 <h2>About Us</h2>
@@ -42,7 +46,7 @@
             </div>
         </div>
     </section>
-    <section class="cars-section">
+    <section class="cars-section" id="cars">
         <div class="cars-container">
             <h2>Our Deluxe Cars</h2>
            <div class="cars-grid"> 
@@ -89,14 +93,40 @@
                     <img src="/content/deluxe-cars/car6.jpg" alt="Voltaris Eon">
                     <h3>2026 Voltaris Eon</h3>
                     <p>The all-electric Voltaris Eon delivers instant torque, autonomous driving tech, and a sleek zero-emission design.</p>
-                    <span class="price">$89,900</span>
+                    <span class="price">$149,900</span>
                     <button class="car-btn">View Details</button>
                 </div>
             </div>
-
         </div>
     </section>
+    <section class="countdown-section" id="countdown">
+        <div class="countdown-container">
+            <h2>Black Friday Countdown</h2>
+            <div class="countdown" id="countdown">
+                <div class="time-box">
+                    <span class="number" id="days">000</span>
+                    <div class="label">Days</div>
+                </div>
+                <div class="separator">:</div>
+                <div class="time-box">
+                    <span class="number" id="hours">00</span>
+                    <div class="label">Hours</div>
+                </div>
+                <div class="separator">:</div>
+                <div class="time-box">
+                    <span class="number" id="minutes">00</span>
+                    <div class="label">Minutes</div>
+                </div>
+                <div class="separator">:</div>
+                <div class="time-box">
+                    <span class="number" id="seconds">00</span>
+                    <div class="label">Seconds</div>
+                </div>
+            </div>
+        </div>
+</section>
 
 <script src="/js/navbar.js"></script>
+<script src="/js/countdown.js"></script>
 </body>
 </html>
