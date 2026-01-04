@@ -1,10 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Orbitron:wght@400..900&display=swap');
 
 *{
     padding: 0;
     margin: 0;
     list-style: none;
     font-family: "Montserrat Alternates", sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #020004;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #12011a;
 }
 
 ::selection{
@@ -42,6 +59,12 @@ body{
     font-weight: bold;
     margin-right: 5%;
 }
+
+.navbar .logo, .starter-content h1 b{
+    font-family: "Orbitron", sans-serif !important;
+    text-transform: uppercase;
+}
+
 .navbar .nav-items ul{
     display: flex;
     flex-direction: row;
@@ -93,19 +116,9 @@ body{
 }
 
 .starter-page video {
-    position: fixed !important;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100% !important;
-    height: 100vh !important;
-    object-fit: cover;
-    z-index: 0 !important;
-}
-
-.starter-page video{
-    position: absolute;
-    inset: 0;
-    top: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -129,7 +142,7 @@ body{
 }
 
 .starter-content h1{
-    font-size: 3rem;
+    font-size: 2.8rem;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px #000;
 }
@@ -155,5 +168,171 @@ body{
 .starter-content button:hover{
     background-color: #fff;
     color: #000;
+    transform: scale(1.05);
+}
+
+section{
+    background: linear-gradient(120deg, #000, #10021b);
+    z-index: 100;
+    border-top: 0.5px solid #fff;
+    min-height: 400px;
+    padding: 25px;
+    position: relative;
+}
+
+.about-content{
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.about-content .text-cont{
+    flex: 2;
+    margin-right: auto;
+}
+
+.text-cont h2{
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.text-cont p{
+    font-size: 1.1rem;
+    line-height: 1.5;
+    width: 95%;
+}
+
+.about-content .image-cont{
+    flex: 1;
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.image-cont img{
+    width: 100%;
+    height: auto;
+    border: 1px solid #ffffffcf;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.cars-container {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cars-container h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-family: "Orbitron", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: linear-gradient(120deg, #fff, #b0b0b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    place-items: center;
+}
+
+.car-card {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #0a001056 0%, #0c001839 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid #ffffff94;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(37, 0, 92, 0.3), inset 0 0 20px rgba(128, 0, 128, 0.05);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    height: 420px;
+}
+
+.car-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(128, 0, 128, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 0 40px #4f0080, inset 0 0 30px rgba(128, 0, 128, 0.1);
+    border-color: #4f0080;
+}
+
+.car-card:hover::before {
+    left: 100%;
+}
+
+.car-card img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    filter: brightness(1.1) contrast(1.2);
+}
+
+.car-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #d2d2d2;
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 2px;
+}
+
+.car-card p {
+    font-size: 0.95rem;
+    color: #b0b0b0;
+    line-height: 1.6;
+}
+
+.price {
+    display: block;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: #4caf50;
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.car-btn {
+    padding: 0.8rem 1.6rem;
+    cursor: pointer;
+    margin-top: auto;
+    background: linear-gradient(135deg, #4f0080, #1a0033);
+    border: 1.5px solid #11001b;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    width: 100%;
+}
+
+.car-btn:hover {
+    background: linear-gradient(135deg, #6b00b3, #2d0052);
+    box-shadow: 0 0 25px rgba(76, 0, 153, 0.8), inset 0 0 15px rgba(76, 0, 153, 0.2);
     transform: scale(1.05);
 }
