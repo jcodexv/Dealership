@@ -1,26 +1,54 @@
 document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
-    if (!navbar) return;
+    const navItems = document.querySelector('.nav-items');
+    const navToggler = document.querySelector('.navbar-toggler');
+    const togglerIcon = navToggler?.querySelector('i');
+    if (!navbar || !navItems || !navToggler || !togglerIcon) return;
 
-    let lastY = window.scrollY;
-    let ticking = false;
+    Object.assign(navbar.style, {
+        position: 'fixed',
+        top: '0',
+        width: '100%',
+        zIndex: '1000'
+    });
 
-    function update() {
-        if (lastY > 10) navbar.classList.add('active');
-        else navbar.classList.remove('active');
-        ticking = false;
-    }
+    const isMobile = () => window.innerWidth <= 768;
+    const hasScrolled = () => window.scrollY > 10;
 
-    function onScroll() {
-        lastY = window.scrollY;
-        if (!ticking) {
-            requestAnimationFrame(update);
-            ticking = true;
+    const update = () => {
+        if (!isMobile()) {
+            navbar.classList.toggle('active', hasScrolled());
+        } else {
+            if (hasScrolled()) {
+                navbar.classList.add('active');
+            } else if (!navItems.classList.contains('active')) {
+                navbar.classList.remove('active');
+            }
         }
-    }
+    };
 
-    window.addEventListener('scroll', onScroll, { passive: true });
-    lastY = window.scrollY;
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+
+    navToggler.addEventListener('click', () => {
+        const opening = !navItems.classList.contains('active');
+        navItems.classList.toggle('active');
+
+        if (opening) {
+            togglerIcon.className = 'fa-solid fa-xmark';
+        } else {
+            togglerIcon.className = 'fa-solid fa-bars-staggered';
+        }
+
+        if (isMobile() && opening && !hasScrolled() && !navbar.classList.contains('active')) {
+            navbar.classList.add('active');
+        }
+
+        if (isMobile() && !opening && !hasScrolled()) {
+            navbar.classList.remove('active');
+        }
+    });
+
     update();
 });
 
@@ -36,9 +64,9 @@ if (video && img) {
         video.style.display = '';
     };
 
-    video.addEventListener('canplaythrough', reveal, { once: true });
-    video.addEventListener('loadeddata', reveal, { once: true });
-    video.addEventListener('playing', reveal, { once: true });
+    ['canplaythrough', 'loadeddata', 'playing'].forEach(e =>
+        video.addEventListener(e, reveal, { once: true })
+    );
 
     video.addEventListener('error', () => {
         img.style.display = 'block';
@@ -52,4 +80,3 @@ if (video && img) {
         }
     }, 5000);
 }
-
