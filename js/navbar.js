@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         zIndex: '1000'
     });
 
-    const isMobile = () => window.innerWidth <= 768;
+    const isMobile = () => window.innerWidth <= 880;
     const hasScrolled = () => window.scrollY > 10;
 
     const update = () => {
