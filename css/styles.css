@@ -6,6 +6,17 @@
     list-style: none;
     font-family: "Montserrat Alternates", sans-serif;
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a, button, input, textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: none) {
+  *:focus {
+    outline: none;
+  }
 }
 
 ::-webkit-scrollbar {
