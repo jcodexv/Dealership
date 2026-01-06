@@ -18,7 +18,7 @@
                     <li class="nav-links"><a href="#about">About Us</a></li>
                     <li class="nav-links"><a href="#cars">Deluxe Cars</a></li>
                     <li class="nav-links"><a href="#countdown">Black Friday</a></li>
-                    <li class="nav-links"><a href="#">Contact</a></li>
+                    <li class="nav-links"><a href="#contact">Contact</a></li>
                 </ul>
             </div>
             <div class="navbar-toggler">
@@ -125,7 +125,27 @@
             </div>
         </div>
 </section>
-
+<section class="contact-section" id="contact">
+    <div class="form-container">
+        <h2>Contact Us</h2>
+        <form action="">
+            <label for="name">Full name</label>
+            <input type="text" placeholder="Please input your full name" required>
+            <label for="email">Email Address</label>
+            <input type="email" placeholder="example@gmail.com" required>
+            <label for="message">Message/Commentary</label>
+            <textarea name="message" id="" placeholder="Type here your message or commentary..." required></textarea>
+            <div class="captcha-box">
+                <label class="captcha-label">
+                    <input type="checkbox" required id="robot">
+                    <span class="checkmark"></span>
+                    <span class="captcha-text">I'm not a robot</span>
+                </label>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</section>
 <footer>
     <div class="footer-content">
         <p>&copy; 2026 Dealex. All rights reserved.</p>
