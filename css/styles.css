@@ -304,6 +304,13 @@ section{
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
+.image-cont img:hover{
+    transition: all 0.35s ease;
+    transform: scale(1.01);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+    filter: brightness(1.25);
+}
+
 @media (max-width: 900px){
     .about-content{
         flex-direction: column;
